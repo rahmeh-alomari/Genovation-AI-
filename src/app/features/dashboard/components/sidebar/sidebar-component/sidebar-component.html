@@ -27,4 +27,11 @@
     <img src="assets/avatar.jpg" alt="User Avatar" class="user-avatar" />
     <span class="text" *ngIf="!isCollapsed">Rahmeh Akram</span>
   </div>
+  <div class="logout-section" [class.collapsed]="isCollapsed">
+  <button (click)="logout()" class="logout-btn">
+    <i class="pi pi-power-off icon"></i>
+    <span class="text" *ngIf="!isCollapsed">Logout</span>
+  </button>
+</div>
+
 </nav>

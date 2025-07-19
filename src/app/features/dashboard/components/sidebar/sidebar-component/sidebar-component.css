@@ -124,3 +124,25 @@
 .user-info:hover .user-avatar {
   transform: scale(1.05);
 }
+.logout-section {
+  margin-top: auto;
+  padding: 1rem;
+  border-top: 1px solid #444;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #eee;
+  font-size: 1rem;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logout-btn:hover {
+  color: #f44336; 
+}

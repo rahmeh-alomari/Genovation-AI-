@@ -524,6 +524,30 @@
       "rfi": "Request1",
       "dPhone": "0987678938",
       "email": "rahmeh@gmail.com"
+    },
+    {
+      "id": 1753181633982,
+      "firstName": "sami",
+      "lastName": "sami",
+      "role": "admin",
+      "email": "sami@nadsoft.net",
+      "password": "r@123123"
+    },
+    {
+      "id": 1753181665443,
+      "firstName": "rr",
+      "lastName": "rr",
+      "role": "admin",
+      "email": "samwi@nadsoft.net",
+      "password": "111111"
+    },
+    {
+      "id": 1753182299489,
+      "firstName": "rahmeh",
+      "lastName": "rahmeh",
+      "role": "admin",
+      "email": "rahmeh@gmail.com",
+      "password": "r@123123"
     }
   ]
 }
