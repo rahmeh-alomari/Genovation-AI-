@@ -10,81 +10,110 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
-        "build": {
-          "builder": "@angular/build:application",
-          "options": {
-            "browser": "src/main.ts",
-            "tsConfig": "tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
-          },
-          "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
-                }
-              ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve": {
-          "builder": "@angular/build:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "genovation-user-management:build:production"
-            },
-            "development": {
-              "buildTarget": "genovation-user-management:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular/build:extract-i18n"
-        },
-        "test": {
-          "builder": "@angular/build:karma",
-          "options": {
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.css"
-            ]
-          }
+  "build": {
+    "builder": "@angular-devkit/build-angular:browser",
+    "options": {
+      "outputPath": "dist/genovation-user-management",
+      "index": "src/index.html",
+      "main": "src/main.ts",
+      "polyfills": "src/polyfills.ts",
+      "tsConfig": "tsconfig.app.json",
+      "assets": [
+        "src/favicon.ico",
+        "src/assets",
+        {
+          "glob": "**/*",
+          "input": "public"
         }
+      ],
+      "styles": [
+        "node_modules/primeflex/primeflex.css",
+        "node_modules/primeicons/primeicons.css",
+        "src/styles.css"
+      ],
+      "scripts": []
+    },
+    "configurations": {
+      "production": {
+        "outputHashing": "all",
+        "fileReplacements": [
+          {
+            "replace": "src/environments/environment.ts",
+            "with": "src/environments/environment.production.ts"
+          }
+        ],
+        "budgets": [
+          {
+            "type": "initial",
+            "maximumWarning": "500kb",
+            "maximumError": "1mb"
+          },
+          {
+            "type": "anyComponentStyle",
+            "maximumWarning": "4kb",
+            "maximumError": "8kb"
+          }
+        ]
+      },
+      "development": {
+        "sourceMap": true,
+        "optimization": false,
+        "extractLicenses": false
+      },
+      "staging": {
+        "fileReplacements": [
+          {
+            "replace": "src/environments/environment.ts",
+            "with": "src/environments/environment.staging.ts"
+          }
+        ],
+        "sourceMap": true,
+        "optimization": false,
+        "extractLicenses": false,
+        "outputHashing": "none"
       }
+    },
+    "defaultConfiguration": "development"
+  },
+  "serve": {
+    "builder": "@angular-devkit/build-angular:dev-server",
+    "configurations": {
+      "production": {
+        "buildTarget": "genovation-user-management:build:production"
+      },
+      "development": {
+        "buildTarget": "genovation-user-management:build:development"
+      },
+      "staging": {
+        "buildTarget": "genovation-user-management:build:staging"
+      }
+    },
+    "defaultConfiguration": "development"
+  },
+  "extract-i18n": {
+    "builder": "@angular-devkit/build-angular:extract-i18n"
+  },
+  "test": {
+    "builder": "@angular-devkit/build-angular:karma",
+    "options": {
+      "tsConfig": "tsconfig.spec.json",
+      "assets": [
+        "src/favicon.ico",
+        "src/assets",
+        {
+          "glob": "**/*",
+          "input": "public"
+        }
+      ],
+      "styles": [
+        "node_modules/primeflex/primeflex.css",
+        "node_modules/primeicons/primeicons.css",
+        "src/styles.css"
+      ]
+    }
+  }
+}
+
     }
   }
 }

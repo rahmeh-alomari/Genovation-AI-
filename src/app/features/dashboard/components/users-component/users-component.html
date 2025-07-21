@@ -1,0 +1,20 @@
+<div style="    margin: 20px 50px;
+    text-align: end;">
+  <p-toast></p-toast>
+
+  <button pButton icon="pi pi-plus" label="Add User" class="p-button-primary mb-3"
+    (click)="showAddDialog.set(true)"></button>
+</div>
+
+
+<app-add-user-form [showDialog]="showAddDialog" (userAdded)="onUserAdded($event)"></app-add-user-form>
+
+
+<app-smart-table-component [columns]="columns" [data]="users()" (edit)="openEditDialog($event)"
+  (delete)="confirmDelete($event)"></app-smart-table-component>
+
+<app-user-edit-form *ngIf="selectedUser()" [user]="selectedUser()!" [visible]="displayEditDialog()"
+  (save)="handleConfirmedEdit($event)"></app-user-edit-form>
+
+<app-user-delete-form [visible]="deleteDialogVisible()" [user]="userToDelete()"
+  (cancel)="deleteDialogVisible.set(false)" (confirm)="handleConfirmedDelete($event)"></app-user-delete-form>

@@ -1,0 +1,26 @@
+
+
+.small-card {
+  flex: 1 1 50%; 
+  max-width: 30%; 
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-bottom: 4rem;
+}
+
+::ng-deep .small-card .p-card-body {
+  padding: 0;
+}
+
+
+
+@media (max-width: 1024px) {
+  .small-card {
+    flex: 1 1 100% !important; 
+    max-width: 100% !important;
+    height: auto; 
+  }
+}

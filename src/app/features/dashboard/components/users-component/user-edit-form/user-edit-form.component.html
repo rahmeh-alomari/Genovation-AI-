@@ -1,0 +1,43 @@
+<p-dialog
+  header="Edit User"
+  [(visible)]="visible"
+  [modal]="true"
+  [closable]="true"
+  [style]="{ width: '450px' }"
+  (onHide)="closeDialog()"
+>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-fluid">
+    @for (field of fields; track field.name) {
+      <div class="p-field">
+        <label [for]="field.name">{{ field.label }}</label>
+
+        <ng-container *ngIf="field.dropdown; else textInput">
+          <p-dropdown
+            [options]="field.options"
+            [formControlName]="field.name"
+            [placeholder]="'Select ' + field.label"
+            [id]="field.name"
+          ></p-dropdown>
+        </ng-container>
+
+        <ng-template #textInput>
+          <input
+            pInputText
+            [id]="field.name"
+            [formControlName]="field.name"
+            [type]="field.name === 'email' ? 'email' : 'text'"
+          />
+        </ng-template>
+
+        <small *ngIf="form.get(field.name)?.invalid && form.get(field.name)?.touched" class="p-error">
+          {{ field.label }} is required.
+        </small>
+      </div>
+    }
+
+    <div class="flex justify-end gap-2">
+      <button type="button" pButton label="Cancel" class="p-button-secondary p-mr-2" (click)="onCancel()"></button>
+      <button type="submit" pButton label="Save" class="p-button-success"></button>
+    </div>
+  </form>
+</p-dialog>

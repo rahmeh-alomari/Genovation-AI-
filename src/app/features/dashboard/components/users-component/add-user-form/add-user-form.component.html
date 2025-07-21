@@ -1,0 +1,74 @@
+<p-dialog
+  header="Add New User"
+  [visible]="showDialog()"
+  (visibleChange)="showDialog.set($event)"
+  [modal]="true"
+  [style]="{ width: '600px' }"
+  [closable]="true"
+  [responsive]="true"
+>
+  <form
+    [formGroup]="userForm"
+    (ngSubmit)="onSubmit()"
+    class="p-fluid user-form-grid"
+    novalidate
+  >
+    <div class="avatar-block">
+      <label class="field-label">Avatar</label>
+      <div class="avatar-wrapper">
+        <img src="assets/avatar.jpg" alt="Avatar" class="avatar-img" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field">
+        <label for="firstName">First Name *</label>
+        <input id="firstName" pInputText formControlName="firstName" />
+        <small class="p-error" *ngIf="isInvalid('firstName')">Required</small>
+      </div>
+
+      <div class="form-field">
+        <label for="middleName">Middle Name *</label>
+        <input id="middleName" pInputText formControlName="middleName" />
+        <small class="p-error" *ngIf="isInvalid('middleName')">Required</small>
+      </div>
+
+      <div class="form-field">
+        <label for="lastName">Last Name *</label>
+        <input id="lastName" pInputText formControlName="lastName" />
+        <small class="p-error" *ngIf="isInvalid('lastName')">Required</small>
+      </div>
+    </div>
+
+    <div class="of-field">
+      <label for="role">Role *</label>
+      <p-dropdown
+        inputId="role"
+        [options]="roles"
+        formControlName="role"
+        optionLabel="label"
+        optionValue="value"
+        placeholder="Select Role"
+      ></p-dropdown>
+      <small class="p-error" *ngIf="isInvalid('role')">Required</small>
+    </div>
+
+    <div class="of-field" *ngFor="let f of ['department','fleet','rfi','dPhone','email']">
+      <label [for]="f">{{ labelMap[f] }} *</label>
+      <input pInputText [id]="f" [formControlName]="f" />
+      <small class="p-error" *ngIf="isInvalid(f)">
+        {{ labelMap[f] }} is required
+        <span *ngIf="f==='dPhone'"> (10 digits)</span>
+        <span *ngIf="f==='email'"> & valid</span>.
+      </small>
+    </div>
+
+    <button
+      pButton
+      type="submit"
+      label="Add New User"
+      class="p-button-success mt-3"
+      [disabled]="userForm.invalid || isSubmitting"
+    ></button>
+  </form>
+</p-dialog>

@@ -1,0 +1,16 @@
+<p-dialog
+  header="Confirm Delete"
+  [(visible)]="visible"
+  [modal]="true"
+   [closable]="true"  [responsive]="true"
+
+  [style]="{ width: '350px' }"
+  (onHide)="cancelDelete()"
+>
+  <p>Are you sure you want to delete vehicle <strong>{{ vehicle?.fleet }}</strong>?</p>
+
+  <div class="p-dialog-footer" style="text-align: right;">
+    <button pButton type="button" label="Cancel" class="p-button-text" (click)="cancelDelete()"></button>
+    <button pButton type="button" label="Delete" class="p-button-danger" (click)="confirmDelete()"></button>
+  </div>
+</p-dialog>

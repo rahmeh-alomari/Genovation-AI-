@@ -1,0 +1,30 @@
+<nav class="sidebar" [class.collapsed]="isCollapsed">
+  <button class="toggle-btn" (click)="toggleSidebar()">
+    <i [class]="isCollapsed ? 'pi pi-bars' : 'pi pi-times'"></i>
+  </button>
+
+  <ul class="menu">
+    <li class="logo">
+      <img src="assets/favicon.ico.png" alt="App Logo" />
+    </li>
+
+    <li>
+      <a routerLink="/dashboard/users" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="pi pi-user icon"></i>
+        <span class="text" *ngIf="!isCollapsed">Users</span>
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="/dashboard/vehicles" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="pi pi-car icon"></i>
+        <span class="text" *ngIf="!isCollapsed">Vehicles</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="user-info" [class.collapsed]="isCollapsed">
+    <img src="assets/avatar.jpg" alt="User Avatar" class="user-avatar" />
+    <span class="text" *ngIf="!isCollapsed">Rahmeh Akram</span>
+  </div>
+</nav>

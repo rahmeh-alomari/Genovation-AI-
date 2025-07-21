@@ -1,0 +1,78 @@
+<p-dialog
+  header="Edit Vehicle"
+  [(visible)]="visible"
+  [modal]="true"
+  [closable]="true"
+  [responsive]="true"
+  
+  [style]="{ width: '450px' }"
+  (onHide)="closeDialog()"
+>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-fluid space-y-4">
+    
+    <div class="field">
+      <label for="plateNum">Plate Number</label>
+      <input
+        id="plateNum"
+        type="text"
+        pInputText
+        formControlName="plateNum"
+      />
+      <small class="p-error" *ngIf="form.get('plateNum')?.invalid && form.get('plateNum')?.touched">
+        <span *ngIf="form.get('plateNum')?.errors?.['required']">Required</span>
+        <span *ngIf="form.get('plateNum')?.errors?.['minlength']">Minimum 3 characters</span>
+      </small>
+    </div>
+
+    <div class="field">
+      <label for="fleet">Fleet</label>
+      <input
+        id="fleet"
+        type="text"
+        pInputText
+        formControlName="fleet"
+      />
+      <small class="p-error" *ngIf="form.get('fleet')?.invalid && form.get('fleet')?.touched">
+        <span *ngIf="form.get('fleet')?.errors?.['required']">Required</span>
+      </small>
+    </div>
+
+    <div class="field">
+      <label for="sim">SIM</label>
+      <input id="sim" type="text" pInputText formControlName="sim" />
+    </div>
+
+    <div class="field">
+      <label for="device">Device</label>
+      <input id="device" type="text" pInputText formControlName="device" />
+    </div>
+
+    <div class="field">
+      <label for="gps">GPS</label>
+      <input id="gps" type="text" pInputText formControlName="gps" />
+    </div>
+
+    <div class="field">
+      <label for="odometer">Odometer</label>
+      <input id="odometer" type="number" pInputText formControlName="odometer" />
+    </div>
+
+    <div class="field">
+      <label for="vehicleStatus">Vehicle Status</label>
+      <select id="vehicleStatus" pDropdown formControlName="vehicleStatus" class="p-dropdown">
+        <option value="" disabled>Select status</option>
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+        <option value="Maintenance">Maintenance</option>
+      </select>
+      <small class="p-error" *ngIf="form.get('vehicleStatus')?.invalid && form.get('vehicleStatus')?.touched">
+        <span *ngIf="form.get('vehicleStatus')?.errors?.['required']">Required</span>
+      </small>
+    </div>
+
+    <div class="flex justify-end gap-2">
+      <button type="button" pButton label="Cancel" class="p-button-secondary" (click)="onCancel()"></button>
+      <button type="submit" pButton label="Save" class="p-button-primary" [disabled]="form.invalid"></button>
+    </div>
+  </form>
+</p-dialog>

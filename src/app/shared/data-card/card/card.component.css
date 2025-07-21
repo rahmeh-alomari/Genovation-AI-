@@ -1,0 +1,45 @@
+
+
+.small-card {
+ 
+  margin-bottom: 20px;
+}
+
+::ng-deep .small-card .p-card-body {
+  padding: 0;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
+
+.text-card {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.text-card p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Responsive: on small screens make card full width but keep height consistent */
+@media (max-width: 1068px) {
+  .small-card {
+    flex: 1 1 100%;  /* full width */
+    max-width: 100%;
+    height: 240px;   /* keep fixed height */
+  }
+}

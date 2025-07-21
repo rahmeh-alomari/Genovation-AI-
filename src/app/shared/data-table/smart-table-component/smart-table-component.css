@@ -1,0 +1,92 @@
+.big-input {
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.buttons-group {
+  flex: 1 1 200px;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.import-label {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  margin-block-start: 5px;
+  justify-content: center;
+  height: 35px;
+  padding: 0 1rem;
+  font-size: 0.875rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.import-label .file-upload-input {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+::ng-deep .p-table {
+  width: 100% !important;
+  overflow-x: auto;
+}
+
+::ng-deep .p-datatable-wrapper {
+  overflow-x: auto;
+}
+
+::ng-deep .p-datatable-thead>tr>th {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+
+  .buttons-group {
+    justify-content: flex-start;
+  }
+
+
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 9999px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.status-active {
+  background-color: #d1fae5;
+  color: #065f46;
+  padding: 5px 10px;
+}
+
+.status-inactive {
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 5px 10px;
+
+}
+
+.status-pending {
+  background-color: #fef3c7;
+  color: #92400e;
+  padding: 5px 10px;
+
+}

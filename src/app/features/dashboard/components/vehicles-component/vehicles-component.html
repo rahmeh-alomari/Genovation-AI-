@@ -1,0 +1,46 @@
+<div class="flex flex-wrap justify-center gap-4 m-5">
+  @for (card of cards(); track card) {
+    <app-card
+      *ngIf="card.showChart; else noChart"
+      [chartType]="card.chartType"
+      [chartData]="card.chartData"
+      class="sm:w-3/4 md:w-3/4 lg:w-1/3 xl:w-1/4 2xl:w-1/5 h-60"
+      style="margin: auto;"
+    ></app-card>
+
+    <ng-template #noChart>
+      <app-card
+        [title]="card.title"
+        [value]="card.value"
+        class="sm:w-3/4 md:w-3/4 lg:w-1/3 xl:w-1/4 2xl:w-1/5 h-60"
+        style="margin: auto;"
+      ></app-card>
+    </ng-template>
+  }
+</div>
+
+
+
+<p-toast></p-toast>
+
+<app-smart-table-component
+  [columns]="columns"
+  [data]="vehicles()"
+  (edit)="openEditDialog($event)"
+  (delete)="confirmDelete($event)">
+</app-smart-table-component>
+
+<app-vehicle-edit-form
+  *ngIf="selectedVehicle()"
+  [vehicle]="selectedVehicle()!"
+  [(visible)]="displayEditDialog"
+  (save)="handleConfirmedEdit($event)"
+></app-vehicle-edit-form>
+
+
+<app-vehicle-delete-form
+  [visible]="deleteDialogVisible()"
+  [vehicle]="vehicleToDelete()"
+  (cancel)="deleteDialogVisible.set(false)"
+  (confirm)="handleConfirmedDelete($event)">
+</app-vehicle-delete-form>

@@ -1,59 +1,49 @@
-# GenovationUserManagement
+# Genovation User Management
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.1.
+This project is an Angular 18 application for managing users and vehicles with a PrimeNG UI and a mock REST API backend powered by `json-server`.
 
-## Development server
+## How to Run the Project
 
-To start a local development server, run:
+### 1. Start the Angular Development Server
 
+Run the Angular app with:
 ```bash
-ng serve
-```
+npm start
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+bash  api
+npm run start:api
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Table of Contents
 
-```bash
-ng generate component component-name
-```
+- [Features](#features)  
+- [Prerequisites](#prerequisites)  
+- [Setup](#setup)  
+- [Running the Project](#running-the-project)  
+- [API](#api)  
+- [Environment Configuration](#environment-configuration)  
+- [Folder Structure](#folder-structure)  
+- [Technologies](#technologies)  
+- [Contributing](#contributing)  
+- [License](#license)  
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Features
 
-## Building
+- Responsive sidebar with PrimeIcons  
+- User and Vehicle CRUD operations  
+- Data fetched from a mock REST API (`json-server`)  
+- Table with sorting, filtering, pagination  
+- CSV export and import functionalities  
+- Dark theme using PrimeNG themes and Tailwind CSS  
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## Prerequisites
+- json-server --watch db.json --port 3001
+- [Node.js](https://nodejs.org/) (version 20.x recommended)  
+- [npm](https://www.npmjs.com/) (comes with Node.js)  
+- Angular CLI v18 installed globally (optional):  
+  npm install -g @angular/cli@18
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

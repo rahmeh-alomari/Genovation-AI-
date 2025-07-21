@@ -1,0 +1,64 @@
+<div class=" mx-3 px-5">
+
+  <div>
+    <p-toolbar styleClass="mb-4 ">
+      <div class="flex-1 min-w-[250px]">
+        <input type="text" pInputText (input)="table.filterGlobal($any($event.target).value, 'contains')"
+          placeholder="Search table..." class="w-full p-inputtext p-component" />
+      </div>
+
+      <ng-template pTemplate="right">
+        <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import"
+          class="mr-2 inline-block" pTooltip="Import users from file" tooltipPosition="bottom"></p-fileUpload>
+
+        <p-button icon="pi pi-external-link" label="Export" (onClick)="onExportCSV()"
+          pTooltip="Export table data as CSV" tooltipPosition="bottom"></p-button>
+      </ng-template>
+
+    </p-toolbar>
+
+  </div>
+
+
+
+
+
+  <p-table #dt [exportHeader]="'customExportHeader'" [value]="data" [globalFilterFields]="globalFilterFields"
+    [paginator]="true" [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10, 25, 50]" [rowHover]="true"
+    dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [filterDelay]="0"
+    responsiveLayout="scroll" [scrollable]="true" scrollHeight="400px">
+    <ng-template pTemplate="header">
+      <tr>
+        <th *ngFor="let col of columns" pSortableColumn="{{ col.field }}">
+          <div class="flex items-center gap-2">
+            {{ col.header }}
+            <p-sortIcon [field]="col.field"></p-sortIcon>
+          </div>
+        </th>
+        <th>Actions</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-rowData>
+      <tr>
+        <td *ngFor="let col of columns">
+          <span class="status-badge" [ngClass]="{
+    'status-active': rowData[col.field] === 'Active',
+    'status-inactive': rowData[col.field] === 'Inactive',
+    'status-pending': rowData[col.field] === 'Maintenance'
+  }">
+            {{ rowData[col.field] }}
+          </span>
+        </td>
+        <td>
+          <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info p-mr-2"
+            (click)="onEdit(rowData)" aria-label="Edit"></button>
+
+          <button pButton icon="pi pi-trash" class="p-button-rounded p-button-text p-button-danger"
+            (click)="onDelete(rowData)" aria-label="Delete"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+</div>

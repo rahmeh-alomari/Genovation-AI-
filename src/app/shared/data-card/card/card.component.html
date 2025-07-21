@@ -1,0 +1,14 @@
+<div class="card-grid">
+  <p-card subheader="Card Subheader"  role="region" class="small-card p-shadow-2" [style]="{ width: '20em' }">
+    <div *ngIf="chartData; else plainCard">
+      <canvas #chartCanvas></canvas>
+    </div>
+
+    <ng-template #plainCard>
+      <div class="text-card">
+        <h4>{{ title }}</h4>
+        <p>{{ value }}</p>
+      </div>
+    </ng-template>
+  </p-card>
+</div>
