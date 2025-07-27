@@ -35,5 +35,20 @@
             Don't have an account?
             <a routerLink="/signup">Sign up</a>
         </p>
+      <p class="forgot-password-text" style="margin-top: 1rem;">
+  <a href="#" (click)="showForgotPasswordDialog = true; $event.preventDefault()">Forgot Password?</a>
+</p>
     </div>
+  
+<p-dialog
+  header="Forgot Password"
+  [(visible)]="showForgotPasswordDialog"
+  modal
+  [closable]="true"
+  [dismissableMask]="true"
+  [style]="{ width: '350px' }"
+>
+  <app-forgot-password></app-forgot-password>
+</p-dialog>
+
 </div>

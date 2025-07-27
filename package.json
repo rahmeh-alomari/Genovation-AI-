@@ -7,7 +7,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-     "start:api": "json-server --watch db.json --port 3001",
+    "start:api": "json-server --watch db.json --port 3001",
     "test": "ng test",
     "serve:ssr:genovation-user-management": "node dist/genovation-user-management/server/server.mjs"
   },

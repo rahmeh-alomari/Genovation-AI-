@@ -1,26 +1,21 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "isolatedModules": true,
-    "emitDecoratorMetadata": true,
-    "useDefineForClassFields": false,
-"module": "nodenext",
-    "moduleResolution": "nodenext",
+    "baseUrl": "src",
+    "module": "es2020",
     "target": "es2022",
     "strict": true,
+    "module": "nodenext",
+
     "experimentalDecorators": true,
-    "importHelpers": true,
     "skipLibCheck": true,
+    "allowJs": true,
+    "paths": {
+      "@services/*": ["app/services/*"],
+      "@models/*": ["app/models/*"]
+    }
   },
   "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "typeCheckHostBindings": true,
     "strictTemplates": true
   },
   "files": [],
@@ -31,9 +26,5 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ],
-  "paths": {
-  "@services/*": ["src/app/services/*"],
-  "@models/*": ["src/app/models/*"]
-}
+  ]
 }

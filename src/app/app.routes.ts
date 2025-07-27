@@ -1,44 +1,36 @@
 import { Routes } from '@angular/router';
+
 import { DashboardComponent } from './features/dashboard/components/dashboard-component/dashboard-component';
-import { UsersComponent } from './features/dashboard/components/users-component/users-component';
-import { VehiclesComponent } from './features/dashboard/components/vehicles-component/vehicles-component';
-import { LoginComponent } from './core/auth/login/login/login.component';
-import { authGuard } from './core/guards/auth.guard';
-import { SignupComponent } from './core/auth/signup/signup/signup.component';
 
 export const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full'
-  },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+
   {
     path: 'login',
-    component: LoginComponent
+    loadComponent: () => import('./core/auth/login/login.component').then(m => m.LoginComponent)
   },
-    {
+  {
     path: 'signup',
-    component: SignupComponent
+    loadComponent: () => import('./core/auth/signup/signup.component').then(m => m.SignupComponent)
   },
+  {
+    path: 'forgot-password',
+    loadComponent: () => import('./core/auth/forgot-password/forgot-password.component').then(m => m.ForgotPasswordComponent)
+  },
+
   {
     path: 'dashboard',
     component: DashboardComponent,
-     canActivate: [authGuard],
     children: [
       {
         path: 'users',
-        component: UsersComponent
+        loadComponent: () => import('./features/dashboard/components/users-component/users-component').then(m => m.UsersComponent)
       },
       {
         path: 'vehicles',
-        component: VehiclesComponent
+        loadComponent: () => import('./features/dashboard/components/vehicles-component/vehicles-component').then(m => m.VehiclesComponent)
       },
-      {
-        path: '',
-        redirectTo: 'users',
-        pathMatch: 'full'
-      }
+      { path: '', redirectTo: 'users', pathMatch: 'full' }
     ]
   }
 ];
-
