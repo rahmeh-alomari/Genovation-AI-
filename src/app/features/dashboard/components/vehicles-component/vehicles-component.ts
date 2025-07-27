@@ -9,7 +9,6 @@ import { DialogModule } from 'primeng/dialog';
 import { CommonModule } from '@angular/common';
 import { VehicleDeleteFormComponent } from './vehicle-delete-form/vehicle-delete-form.component';
 import { MessageService } from 'primeng/api';
-import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-vehicles-component',
@@ -20,7 +19,7 @@ import { ToastModule } from 'primeng/toast';
     CardComponent,
     VehicleEditFormComponent,
     VehicleDeleteFormComponent,
-    DialogModule,ToastModule
+    DialogModule,
   ],
   templateUrl: './vehicles-component.html',
   styleUrls: ['./vehicles-component.css'],

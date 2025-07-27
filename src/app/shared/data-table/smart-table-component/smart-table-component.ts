@@ -5,7 +5,6 @@ import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { FileUploadModule } from 'primeng/fileupload';
-import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
 import { MessageService } from 'primeng/api';
 import { TooltipModule } from 'primeng/tooltip';
@@ -13,7 +12,7 @@ import { TooltipModule } from 'primeng/tooltip';
 @Component({
   selector: 'app-smart-table-component',
   standalone: true,
-  imports: [CommonModule, TooltipModule, TableModule, ButtonModule, InputTextModule, FileUploadModule, ToolbarModule, ToastModule],
+  imports: [CommonModule, TooltipModule, TableModule, ButtonModule, InputTextModule, FileUploadModule, ToolbarModule, ],
   templateUrl: './smart-table-component.html',
   styleUrls: ['./smart-table-component.css'],
   providers: [MessageService]

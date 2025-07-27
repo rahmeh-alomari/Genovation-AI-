@@ -419,25 +419,7 @@
       "rfi": "Request29",
       "dPhone": "0299789012",
       "email": "user8@gmail.com",
-      "password": "r@123123R..",
-      "otp": ""
-    },
-    {
-      "id": 0,
-      "email": "dima@gmail.com",
-      "password": "r@123123R..",
-      "role": "user",
-      "firstName": "Dima",
-      "lastName": "Alomari",
-      "otp": ""
-    },
-    {
-      "id": 0,
-      "email": "heba@gmail.com",
-      "password": "$2b$10$Yjy8mvvjjL/85drKQy3bqek7HjnMjEx0xxrslLInw1/RpcWsXThFC",
-      "role": "admin",
-      "firstName": "heba",
-      "lastName": "alomari",
+      "password": "r@12312333",
       "otp": ""
     }
   ]

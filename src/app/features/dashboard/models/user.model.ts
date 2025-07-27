@@ -9,6 +9,7 @@ export interface User {
   fleet?: string;
   rfi?: string;
   dPhone?: string;
+  otp?:string
 }
 export interface AdminUser extends User {
   password: string;    
@@ -18,4 +19,5 @@ export interface SignupFormValue {
   lastName: string;
   email: string;
   password: string;
+  role:string
 }

@@ -9,7 +9,7 @@ import { SidebarComponent } from '../sidebar/sidebar-component/sidebar-component
    standalone: true,
  imports: [RouterModule,SidebarComponent,CommonModule], 
   templateUrl: './dashboard-component.html',
-  styleUrl: './dashboard-component.css',
+  styleUrls: ['./dashboard-component.css'],
 })
 export class DashboardComponent {
 

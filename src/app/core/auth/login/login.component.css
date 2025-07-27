@@ -89,3 +89,45 @@
 .login-footer a:hover {
   text-decoration: underline;
 }
+.forgot-password-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #9ca3af; 
+}
+
+.forgot-password-text a {
+  color: #34d399; 
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.forgot-password-text a:hover {
+  color: #059669; 
+  text-decoration: underline;
+}
+
+.p-dialog {
+  background-color: #1f2937 !important; 
+  color: white !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+}
+
+.p-dialog-header {
+  background-color: #111827 !important; 
+  color: white !important;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+}
+
+.p-dialog-header-close {
+  color: white !important;
+}
+
+.p-dialog-content {
+  padding: 1.5rem !important;
+}

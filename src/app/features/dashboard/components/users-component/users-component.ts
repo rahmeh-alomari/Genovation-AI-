@@ -17,7 +17,6 @@ import { DialogModule } from 'primeng/dialog';
 import { AddUserFormComponent } from './add-user-form/add-user-form.component';
 import { SidebarModule } from 'primeng/sidebar';
 
-import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 
 @Component({
@@ -38,7 +37,7 @@ import { MessageService } from 'primeng/api';
     AddUserFormComponent,
     UserEditFormComponent,
     UserDeleteFormComponent,
-    ToastModule, 
+     
   ],
   providers: [MessageService],
   templateUrl: './users-component.html',

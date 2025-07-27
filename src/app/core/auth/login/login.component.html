@@ -1,54 +1,62 @@
 <div class="login-wrapper">
-    <p-toast></p-toast>
-    <div class="login-box">
-        <h2 class="login-title">Welcome Back 👋</h2>
-        <p class="login-subtitle">Please enter your credentials to log in</p>
-        <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="login-form">
-            <div class="form-group">
-                <label>Email</label>
-                <input pInputText type="email" formControlName="email" placeholder="you@example.com"
-                    class="form-control" />
-                <small *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-msg">
-                    Valid email is required
-                </small>
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <div class="password-wrapper" style="position: relative;">
-                    <input pInputText [type]="showPassword ? 'text' : 'password'" class="form-control"
-                        formControlName="password" placeholder="Password" />
-                    <button type="button" (click)="showPassword = !showPassword" class="toggle-password-btn"
-                        style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;"
-                        aria-label="Toggle password visibility">
-                        <i [class]="showPassword ? 'pi pi-eye' : 'pi pi-eye-slash'"></i>
-                    </button>
-                </div>
-                <span class="error-msg" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors">
-                    <ng-container *ngIf="loginForm.get('password')?.errors?.['required']">
-                        Password is required
-                    </ng-container>
-                </span>
-            </div>
-            <button pButton type="submit" label="Login" class="login-button" [disabled]="loginForm.invalid"></button>
-        </form>
-        <p class="login-footer">
-            Don't have an account?
-            <a routerLink="/signup">Sign up</a>
-        </p>
-      <p class="forgot-password-text" style="margin-top: 1rem;">
-  <a href="#" (click)="showForgotPasswordDialog = true; $event.preventDefault()">Forgot Password?</a>
-</p>
-    </div>
-  
-<p-dialog
-  header="Forgot Password"
-  [(visible)]="showForgotPasswordDialog"
-  modal
-  [closable]="true"
-  [dismissableMask]="true"
-  [style]="{ width: '350px' }"
->
-  <app-forgot-password></app-forgot-password>
-</p-dialog>
+  <div class="login-box">
+    <h2 class="login-title">Welcome Back 👋</h2>
+    <p class="login-subtitle">Please enter your credentials to log in</p>
 
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="login-form">
+      <div class="form-group">
+        <label>Email</label>
+        <input pInputText type="email" formControlName="email" placeholder="you@example.com" class="form-control" />
+        <small *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-msg">
+          Valid email is required
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <div class="password-wrapper" style="position: relative;">
+          <input
+            pInputText
+            [type]="showPassword ? 'text' : 'password'"
+            class="form-control"
+            formControlName="password"
+            placeholder="Password"
+          />
+          <button
+            type="button"
+            (click)="showPassword = !showPassword"
+            class="toggle-password-btn"
+            style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;"
+            aria-label="Toggle password visibility"
+          >
+            <i [class]="showPassword ? 'pi pi-eye' : 'pi pi-eye-slash'"></i>
+          </button>
+        </div>
+        <span class="error-msg" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.errors">
+          <ng-container *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</ng-container>
+        </span>
+      </div>
+
+      <button
+        pButton
+        type="submit"
+        label="Login"
+        class="login-button"
+        [disabled]="loginForm.invalid"
+      ></button>
+    </form>
+
+    <p class="login-footer">
+      Don't have an account?
+      <a routerLink="/signup">Sign up</a>
+    </p>
+
+    <p class="forgot-password-text" style="margin-top: 1rem;">
+      <a href="#" (click)="showForgotPasswordDialog = true; $event.preventDefault()">Forgot Password?</a>
+    </p>
+  </div>
+
+  <p-dialog [(visible)]="showForgotPasswordDialog" [modal]="true" [closable]="true" [dismissableMask]="true" [style]="{width: '400px'}" [baseZIndex]="10000">
+    <app-forgot-password (closeDialog)="showForgotPasswordDialog = false"></app-forgot-password>
+  </p-dialog>
 </div>

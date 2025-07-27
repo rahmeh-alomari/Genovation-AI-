@@ -6,9 +6,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { AuthService } from '../auth.service';
 import { DropdownModule } from 'primeng/dropdown';
-import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { AdminUser, SignupFormValue } from '../../../features/dashboard/models/user.model';
+import { AdminUserBuilder } from 'app/features/dashboard/builders/AdminUserBuilder';
 
 
 @Component({
@@ -21,7 +21,7 @@ import { AdminUser, SignupFormValue } from '../../../features/dashboard/models/u
     RouterModule,
     InputTextModule,
     ButtonModule,
-    ToastModule
+    
   ], templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
   providers: [MessageService],
@@ -58,31 +58,35 @@ export class SignupComponent {
       ]],
     });
   }
-  onSignup() {
-    if (this.signupForm.invalid) return;
+onSignup() {
+  if (this.signupForm.invalid) return;
 
-    const formValue = this.signupForm.value as SignupFormValue;
+  const formValue = this.signupForm.value as SignupFormValue;
 
-    const newUser: AdminUser = {
-      ...formValue,
-      role: 'admin',
-      id: Date.now()
-    };
+  const newUser = new AdminUserBuilder()
+    .setId(Date.now())
+    .setFirstName(formValue.firstName)
+    .setLastName(formValue.lastName)
+    .setEmail(formValue.email)
+    .setPassword(formValue.password)
+    .setRole(formValue.role)
+    .build();
 
-    this.authService.signup(newUser).subscribe({
-      next: (user: AdminUser) => {
-        this.router.navigate(['/dashboard']);
-      },
-      error: (err: Error) => {
-        this.toastService.add({
-          severity: 'error',
-          summary: 'Signup Failed',
-          detail: err?.message || 'Please check your inputs and try again.',
-          life: 3000
-        });
-      }
-    });
-  }
+  this.authService.signup(newUser).subscribe({
+    next: () => {
+      this.router.navigate(['/login']);
+    },
+    error: (err: Error) => {
+      this.toastService.add({
+        severity: 'error',
+        summary: 'Signup Failed',
+        detail: err?.message || 'Please check your inputs and try again.',
+        life: 3000
+      });
+    }
+  });
+}
+
 
 
 
