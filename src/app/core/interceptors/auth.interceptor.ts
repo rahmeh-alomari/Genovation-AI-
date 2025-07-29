@@ -16,7 +16,6 @@ export const authInterceptor: HttpInterceptorFn = (req: HttpRequest<any>, next: 
   return next(authReq).pipe(
     tap({
       next: (event) => {
-        console.log("event",event)
 
         if (event instanceof HttpResponse) {
           if (req.method !== 'GET') {

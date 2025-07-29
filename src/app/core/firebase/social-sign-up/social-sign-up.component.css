@@ -1,0 +1,10 @@
+.button-group {
+  display: flex;
+  gap: 1rem; 
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.button-group ::ng-deep .p-button {
+  flex: 1;
+}

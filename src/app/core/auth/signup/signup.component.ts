@@ -5,10 +5,11 @@ import { Router, RouterModule } from '@angular/router';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { AuthService } from '../auth.service';
-import { DropdownModule } from 'primeng/dropdown';
 import { MessageService } from 'primeng/api';
 import { AdminUser, SignupFormValue } from '../../../features/dashboard/models/user.model';
 import { AdminUserBuilder } from 'app/features/dashboard/builders/AdminUserBuilder';
+import { SocialSignUpComponent } from 'app/core/firebase/social-sign-up/social-sign-up.component';
+import { SelectModule } from 'primeng/select';
 
 
 @Component({
@@ -17,11 +18,11 @@ import { AdminUserBuilder } from 'app/features/dashboard/builders/AdminUserBuild
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    DropdownModule,
+    SelectModule,
     RouterModule,
     InputTextModule,
     ButtonModule,
-    
+    SocialSignUpComponent
   ], templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
   providers: [MessageService],

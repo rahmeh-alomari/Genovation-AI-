@@ -9,55 +9,41 @@ import { User } from '../../../features/dashboard/models/user.model';
 import { AuthService } from '../auth.service';
 import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
 import { DialogModule } from 'primeng/dialog';
-import { AdminUserBuilder } from 'app/features/dashboard/builders/AdminUserBuilder';
+import { SocialLoginComponent } from 'app/core/firebase/social-login/social-login.component';
+
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [DialogModule, CommonModule, ReactiveFormsModule, InputTextModule, RouterModule, ButtonModule, ForgotPasswordComponent],
+  imports:  [DialogModule,CommonModule, ReactiveFormsModule, InputTextModule,RouterModule, ButtonModule,ForgotPasswordComponent,SocialLoginComponent],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  providers: [MessageService]
+  styleUrl: './login.component.css',
+    providers: [MessageService]
 })
 export class LoginComponent {
   loginForm: FormGroup;
   showPassword = false;
   showForgotPasswordDialog = false;
 
-  constructor(
-    private toastService: MessageService,
-    private fb: FormBuilder,
-    private authService: AuthService,
-    private router: Router
-  ) {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-    });
-  }
-
- onLogin() {
+constructor(private toastService: MessageService, private fb: FormBuilder,private authService: AuthService,private router: Router) {
+  this.loginForm=this.fb.group({
+    email:['',[Validators.required, Validators.email]],
+    password:['',Validators.required],
+  })
+}
+onLogin() {
   if (this.loginForm.invalid) return;
 
-  const formValue = this.loginForm.value;
+  const { email, password } = this.loginForm.value;
 
-  const loginPayload = new AdminUserBuilder()
-    .setEmail(formValue.email)
-    .setPassword(formValue.password)
-    .build();
-
-  this.authService.login(loginPayload.email, loginPayload.password).subscribe({
-    next: (user: User) => {
+  this.authService.login(email, password).subscribe({
+    next: (user:User) => {
       this.router.navigate(['/dashboard']);
     },
-    error: (err: Error) => {
-      this.toastService.add({
-        severity: 'error',
-        summary: 'Login Failed',
-        detail: err?.message || 'Invalid email or password',
-        life: 3000,
-      });
-    },
+    error: (err:Error) => {
+            this.toastService.add({severity:'error', summary: 'Login Failed', detail: err?.message || 'Invalid email or password', life: 3000});
+
+    }
   });
 }
 

@@ -439,6 +439,24 @@
       "firstName": "heba",
       "lastName": "alomari",
       "otp": ""
+    },
+    {
+      "id": 1753776879929,
+      "email": "rahmehalomari577@gmail.com",
+      "password": "",
+      "role": "user",
+      "firstName": "rahmeh",
+      "lastName": "alomari",
+      "otp": ""
+    },
+    {
+      "id": 1753779459290,
+      "email": "rahmeh@nadsoft.net",
+      "password": "",
+      "role": "user",
+      "firstName": "Rahmeh",
+      "lastName": "Al-Omari",
+      "otp": ""
     }
   ]
 }

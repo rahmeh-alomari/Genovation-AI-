@@ -10,7 +10,10 @@ const JWT_SECRET = 'your_jwt_secret_key';
 
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
-
+server.use((req, res, next) => {
+  res.setHeader('Cross-Origin-Opener-Policy', 'same-origin-allow-popups');
+  next();
+});
 function createToken(payload) {
   return jwt.sign(payload, JWT_SECRET, { expiresIn: '1h' });
 }
