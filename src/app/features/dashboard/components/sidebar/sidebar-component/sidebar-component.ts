@@ -13,7 +13,6 @@ import { AuthService } from '../../../../../core/auth/auth.service';
 export class SidebarComponent {
  isCollapsed = false;
   constructor(private authService: AuthService, private router: Router) {}
-
   toggleSidebar() {
     this.isCollapsed = !this.isCollapsed;
   }

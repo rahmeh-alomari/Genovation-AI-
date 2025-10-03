@@ -60,14 +60,10 @@ loginWithGoogle() {
 }
 
 
-
-
   loginWithFacebook() {
     const provider = new FacebookAuthProvider();
     return signInWithPopup(firebaseAuth, provider);
   }
-
-
 
 createUserFromSocial(data: {
   email: string;

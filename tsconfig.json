@@ -2,7 +2,6 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "src",
-    "module": "es2020",
     "target": "es2022",
     "strict": true,
     "module": "nodenext",

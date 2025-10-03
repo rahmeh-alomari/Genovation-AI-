@@ -2,6 +2,14 @@
   <app-sidebar-component class="sidebar"></app-sidebar-component>
 
   <main class="main-content">
+      <div class="p-4">
+      <p-dropdown
+        [options]="themes"
+        [(ngModel)]="selectedTheme"
+        (onChange)="onThemeChange($event.value)"
+        placeholder="Select Theme">
+      </p-dropdown>
+    </div>
     <router-outlet></router-outlet>
   </main>
 </div>

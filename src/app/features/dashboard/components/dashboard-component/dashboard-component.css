@@ -1,13 +1,11 @@
 .layout-container {
   display: flex;
   min-height: 100vh;
-  background: #1f2937;
-  color: white;
   flex-direction: row; 
 }
 
 .sidebar {
-  background-color: #1e293b;
+  /* background-color: #1e293b; */
   width: 250px;
   flex-shrink: 0;
 }

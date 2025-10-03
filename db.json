@@ -1,39 +1,6 @@
 {
   "vehicles": [
     {
-      "id": "47",
-      "vehicleStatus": "Active",
-      "fleet": "Fleet G",
-      "sim": "SIM739192",
-      "device": "Device047",
-      "gps": "Enabled",
-      "odometer": 47000,
-      "plateNum": "JRD-4568",
-      "registeredAt": "2022-06-07"
-    },
-    {
-      "id": "48",
-      "vehicleStatus": "Maintenance",
-      "fleet": "Fleet H",
-      "sim": "SIM749394",
-      "device": "Device048",
-      "gps": "Disabled",
-      "odometer": 33000,
-      "plateNum": "JRD-5679",
-      "registeredAt": "2020-11-15"
-    },
-    {
-      "id": "49",
-      "vehicleStatus": "Active",
-      "fleet": "Fleet I",
-      "sim": "SIM759596",
-      "device": "Device049",
-      "gps": "Enabled",
-      "odometer": 44000,
-      "plateNum": "JRD-6781",
-      "registeredAt": "2023-02-19"
-    },
-    {
       "id": "50",
       "vehicleStatus": "Inactive",
       "fleet": "Fleet J",
@@ -65,17 +32,6 @@
       "odometer": 19000,
       "plateNum": "JRD-9014",
       "registeredAt": "2023-03-29"
-    },
-    {
-      "id": "53",
-      "vehicleStatus": "Active",
-      "fleet": "Fleet C",
-      "sim": "SIM791304",
-      "device": "Device053",
-      "gps": "Enabled",
-      "odometer": 53000,
-      "plateNum": "JRD-0125",
-      "registeredAt": "2022-04-13"
     },
     {
       "id": "54",
@@ -156,20 +112,6 @@
     }
   ],
   "users": [
-    {
-      "id": "2b3c",
-      "firstName": "Morgan",
-      "middleName": "Drew",
-      "lastName": "Thomas",
-      "role": "guest",
-      "department": "Legal",
-      "fleet": "Fleet G",
-      "rfi": "Request10",
-      "dPhone": "0298890123",
-      "email": "guest3@gmail.com",
-      "password": "guestpass",
-      "otp": ""
-    },
     {
       "id": "3c4d",
       "firstName": "Jamie",
@@ -409,27 +351,13 @@
       "otp": ""
     },
     {
-      "id": "0t1u",
-      "firstName": "Morgan",
-      "middleName": "Kim",
-      "lastName": "Scott",
-      "role": "user",
-      "department": "Operations",
-      "fleet": "Fleet F",
-      "rfi": "Request29",
-      "dPhone": "0299789012",
-      "email": "user8@gmail.com",
-      "password": "r@123123R..",
-      "otp": ""
-    },
-    {
       "id": 0,
       "email": "dima@gmail.com",
       "password": "r@123123R..",
       "role": "user",
       "firstName": "Dima",
       "lastName": "Alomari",
-      "otp": ""
+      "otp": "402939"
     },
     {
       "id": 0,
@@ -456,7 +384,507 @@
       "role": "user",
       "firstName": "Rahmeh",
       "lastName": "Al-Omari",
+      "otp": "677838"
+    },
+    {
+      "id": 0,
+      "email": "rahmeha@gmail.com",
+      "password": "$2b$10$uFadlKdsyu9.7aDdPqxJv.0lrLFkeaVmShBs5uAMbAOV2p/xfKRMq",
+      "role": "user",
+      "firstName": "rahmeh",
+      "lastName": "rahmeh",
       "otp": ""
+    },
+    {
+      "id": 0,
+      "email": "rahmehq@gmail.com",
+      "password": "$2b$10$5XQJXj0grY.eWmE.Q9tj.eJQfyM80mJ8OnjJXn3Mo3abItZQkhjdC",
+      "role": "user",
+      "firstName": "rahmeha",
+      "lastName": "rahmeha",
+      "otp": ""
+    },
+    {
+      "id": 0,
+      "email": "sami1@nadsoft.net",
+      "password": "$2b$10$sjj7BG/PSzSKkuyqpO5T0e17IQJnQ5anHWMSddUgWFxbkOCU4C/4u",
+      "role": "user",
+      "firstName": "aa",
+      "lastName": "aa",
+      "otp": ""
+    },
+    {
+      "id": 0,
+      "email": "hebaq@gmail.com",
+      "password": "$2b$10$lDU0NNW5OfZhoFfq7sLJC.WB46ok6Vw/TQ5XQJtQ50nLW945x8mvK",
+      "role": "admin",
+      "firstName": "qq",
+      "lastName": "qq",
+      "otp": ""
+    },
+    {
+      "id": 0,
+      "email": "hebas1@gmail.com",
+      "password": "$2b$10$3ez4Tgg8BWTJ7PsMhKDVBOXZgVzgjD9xSJyToKO7qIq0WqPrZKfLO",
+      "role": "user",
+      "firstName": "ss",
+      "lastName": "ss",
+      "otp": ""
+    },
+    {
+      "id": 0,
+      "email": "samgi@nadsoft.net",
+      "password": "$2b$10$VNoxgLRG64sENrb0Kbjz4OB6U/bZThfbw69bOtDQgyP.YsZwYNare",
+      "role": "user",
+      "firstName": "ss",
+      "lastName": "ss",
+      "otp": ""
+    },
+    {
+      "id": "1753872919439",
+      "email": "saddmi@nadsoft.net",
+      "password": "$2b$10$OotLUnWX9bKUW4htoLb6Me5FB30tUV9apM.tGXSYXXQetXq59ElwS",
+      "role": "user",
+      "firstName": "fd",
+      "lastName": "ds",
+      "otp": ""
+    },
+    {
+      "id": "1753878553942",
+      "email": "rahmehwwwwww@gmail.com",
+      "password": "$2b$10$sJpCrfG.F29gz230LVdaV.GCHZ2bkIfzBTjWdkeKQ9ECeQmE76m7O",
+      "role": "user",
+      "firstName": "rahmeh",
+      "lastName": "rahmeh",
+      "otp": ""
+    },
+    {
+      "id": "1756896007521",
+      "email": "rahmeh21@gmail.com",
+      "password": "$2b$10$gu/vZsuSV9ZAaQw8O6PWYu7nJjJWtwt66h.X.oa8i5J8h6aoOoDLS",
+      "role": "admin",
+      "firstName": "rahmeh",
+      "lastName": "rahmeh",
+      "otp": ""
+    },
+    {
+      "id": "1758882269608",
+      "email": "rahmeh11@gmail.com",
+      "password": "$2b$10$9CxEqx7Zme09fhmwEmDic.Ftft3CPnao6p3bdQrdd93rGRwHyjb9K",
+      "role": "user",
+      "firstName": "rahmeh",
+      "lastName": "alomary",
+      "otp": ""
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "department": "HR",
+      "question": "What is the primary purpose of a job description?",
+      "required": true,
+      "options": [
+        "To describe an employee’s performance",
+        "To list every task done daily",
+        "To outline duties, responsibilities, and qualifications",
+        "To manage payroll"
+      ],
+      "correctAnswers": [
+        "To outline duties, responsibilities, and qualifications"
+      ],
+      "multipleSelection": false
+    },
+    {
+      "id": "q2",
+      "type": "essay",
+      "department": "HR",
+      "question": "Explain the importance of employee motivation and how HR can help improve it.",
+      "required": true,
+      "maxLength": 400
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "department": "Legal",
+      "question": "Which law protects employees from workplace discrimination?",
+      "required": true,
+      "options": [
+        "Civil Rights Act",
+        "Environmental Protection Act",
+        "Copyright Law",
+        "Communications Decency Act"
+      ],
+      "correctAnswers": [
+        "Civil Rights Act"
+      ],
+      "multipleSelection": false
+    },
+    {
+      "id": "q4",
+      "type": "essay",
+      "department": "HR",
+      "question": "Describe how HR manages conflict resolution between employees.",
+      "required": true,
+      "maxLength": 350
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "department": "Recruitment",
+      "question": "What is the first step in the recruitment process?",
+      "required": true,
+      "options": [
+        "Interviewing candidates",
+        "Screening resumes",
+        "Identifying the hiring need",
+        "Sending offer letters"
+      ],
+      "correctAnswers": [
+        "Identifying the hiring need"
+      ],
+      "multipleSelection": false
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "department": "HR",
+      "question": "What does 'onboarding' mean in HR?",
+      "required": true,
+      "options": [
+        "Firing an employee",
+        "Training and integrating a new employee",
+        "Conducting exit interviews",
+        "Assigning performance reviews"
+      ],
+      "correctAnswers": [
+        "Training and integrating a new employee"
+      ],
+      "multipleSelection": false
+    },
+    {
+      "id": "q7",
+      "type": "essay",
+      "department": "Diversity & Inclusion",
+      "question": "Discuss the role of HR in maintaining workplace diversity and inclusion.",
+      "required": true,
+      "maxLength": 450
+    },
+    {
+      "id": "q8",
+      "type": "multiple-choice",
+      "department": "Compensation",
+      "question": "Which of the following is an example of employee benefits?",
+      "required": true,
+      "options": [
+        "Salary",
+        "Health insurance",
+        "Performance appraisal",
+        "Job description"
+      ],
+      "correctAnswers": [
+        "Health insurance"
+      ],
+      "multipleSelection": false
+    },
+    {
+      "id": "q9",
+      "type": "essay",
+      "department": "Training",
+      "question": "How does HR contribute to employee training and development?",
+      "required": true,
+      "maxLength": 400
+    },
+    {
+      "id": "q10",
+      "type": "multiple-choice",
+      "department": "Performance",
+      "question": "What is a common reason for conducting employee performance appraisals?",
+      "required": true,
+      "options": [
+        "To punish employees",
+        "To identify training needs and promote growth",
+        "To reduce salary",
+        "To limit work hours"
+      ],
+      "correctAnswers": [
+        "To identify training needs and promote growth"
+      ],
+      "multipleSelection": false
+    },
+    {
+      "id": "q11",
+      "type": "multiple-choice",
+      "department": "Legal",
+      "question": "What is the term for the legal termination of employment by the employer?",
+      "required": true,
+      "options": [
+        "Resignation",
+        "Retirement",
+        "Dismissal",
+        "Promotion"
+      ],
+      "correctAnswers": [
+        "Dismissal"
+      ],
+      "multipleSelection": false
+    },
+    {
+      "id": "q12",
+      "type": "essay",
+      "department": "HR",
+      "question": "Describe the process and importance of conducting exit interviews.",
+      "required": true,
+      "maxLength": 350
+    },
+    {
+      "id": "q13",
+      "type": "multiple-choice",
+      "department": "HR",
+      "question": "Which document outlines company policies and employee expectations?",
+      "required": true,
+      "options": [
+        "Employee handbook",
+        "Job description",
+        "Recruitment flyer",
+        "Pay stub"
+      ],
+      "correctAnswers": [
+        "Employee handbook"
+      ],
+      "multipleSelection": false
+    },
+    {
+      "id": "q14",
+      "type": "essay",
+      "department": "HR",
+      "question": "Explain the significance of maintaining confidentiality in HR management.",
+      "required": true,
+      "maxLength": 400
+    },
+    {
+      "id": "q15",
+      "type": "multiple-choice",
+      "department": "Compensation",
+      "question": "Which HR function deals with payroll processing?",
+      "required": true,
+      "options": [
+        "Recruitment",
+        "Compensation and benefits",
+        "Training and development",
+        "Conflict resolution"
+      ],
+      "correctAnswers": [
+        "Compensation and benefits"
+      ],
+      "multipleSelection": false
+    },
+    {
+      "id": "q16",
+      "type": "multiple-choice",
+      "department": "Leadership",
+      "question": "What is a key characteristic of effective leadership in HR?",
+      "required": true,
+      "options": [
+        "Authoritarian style",
+        "Lack of communication",
+        "Empathy and clear communication",
+        "Ignoring employee feedback"
+      ],
+      "correctAnswers": [
+        "Empathy and clear communication"
+      ],
+      "multipleSelection": false
+    },
+    {
+      "id": "q17",
+      "type": "essay",
+      "department": "Leadership",
+      "question": "Describe a challenging HR situation you faced and how you handled it.",
+      "required": true,
+      "maxLength": 400
+    },
+    {
+      "id": "q18",
+      "type": "multiple-choice",
+      "department": "Recruitment",
+      "question": "Which term best describes the practice of hiring from within the company?",
+      "required": true,
+      "options": [
+        "External recruitment",
+        "Internal recruitment",
+        "Temporary staffing",
+        "Outsourcing"
+      ],
+      "correctAnswers": [
+        "Internal recruitment"
+      ],
+      "multipleSelection": false
+    },
+    {
+      "id": "q19",
+      "type": "essay",
+      "department": "Culture",
+      "question": "How can HR foster a positive organizational culture?",
+      "required": true,
+      "maxLength": 400
+    },
+    {
+      "id": "q20",
+      "type": "multiple-choice",
+      "department": "Recruitment",
+      "question": "Which of the following is a best practice for conducting effective interviews?",
+      "required": true,
+      "options": [
+        "Asking open-ended questions",
+        "Only asking yes/no questions",
+        "Avoiding follow-up questions",
+        "Ignoring candidate responses"
+      ],
+      "correctAnswers": [
+        "Asking open-ended questions"
+      ],
+      "multipleSelection": false
+    },
+    {
+      "id": "b0ec327b-117a-4d67-9459-b5187e86560a",
+      "type": "multiple-choice",
+      "question": "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+      "required": true,
+      "department": "sssssssssssssss",
+      "options": [
+        "s",
+        "s",
+        "s"
+      ],
+      "correctAnswers": [],
+      "multipleSelection": false
+    },
+    {
+      "id": "ade400de-33b7-46ed-b199-b60455f9e9df",
+      "type": "multiple-choice",
+      "question": "how.......",
+      "required": true,
+      "department": "",
+      "options": [
+        "w",
+        "w",
+        "w"
+      ],
+      "correctAnswers": [],
+      "multipleSelection": true
+    }
+  ],
+  "submissions": [
+    {
+      "timestamp": "2025-07-31T08:01:33.963Z",
+      "answers": {
+        "q1": "To list every task done daily",
+        "q2": "`${this.apiUrl}",
+        "q3": "Environmental Protection Act",
+        "q4": "`${this.apiUrl}",
+        "q5": "Screening resumes",
+        "q6": "Firing an employee",
+        "q7": "`${this.apiUrl}",
+        "q8": "Health insurance",
+        "q9": "`${this.apiUrl}",
+        "q10": "To punish employees",
+        "q11": "Retirement",
+        "q12": "`${this.apiUrl}",
+        "q13": "Employee handbook",
+        "q14": "`${this.apiUrl}",
+        "q15": "Compensation and benefits",
+        "q16": "Lack of communication",
+        "q17": "`${this.apiUrl}`${this.apiUrl}`${this.apiUrl}",
+        "q18": "Internal recruitment",
+        "q19": "`${this.apiUrl}`${this.apiUrl}`${this.apiUrl}`${this.apiUrl}",
+        "q20": "Asking open-ended questions"
+      },
+      "id": 1
+    },
+    {
+      "timestamp": "2025-07-31T08:04:22.941Z",
+      "answers": {
+        "q1": "To describe an employee’s performance",
+        "q2": "http://localhost:4200/dashboard/questions",
+        "q3": "Civil Rights Act",
+        "q4": "http://localhost:4200/dashboard/questions",
+        "q5": "Identifying the hiring need",
+        "q6": "Training and integrating a new employee",
+        "q7": "http://localhost:4200/dashboard/questions",
+        "q8": "Health insurance",
+        "q9": "http://localhost:4200/dashboard/questions",
+        "q10": "To identify training needs and promote growth",
+        "q11": "Retirement",
+        "q12": "http://localhost:4200/dashboard/questions",
+        "q13": "Job description",
+        "q14": "http://localhost:4200/dashboard/questions",
+        "q15": "Training and development",
+        "q16": "Lack of communication",
+        "q17": "http://localhost:4200/dashboard/questions",
+        "q18": "External recruitment",
+        "q19": "http://localhost:4200/dashboard/questions",
+        "q20": "Only asking yes/no questions"
+      },
+      "id": 2
+    },
+    {
+      "timestamp": "2025-07-31T08:07:13.633Z",
+      "answers": {
+        "q1": "To describe an employee’s performance",
+        "q2": "http://localhost:4200/dashboard/questions",
+        "q3": "Environmental Protection Act",
+        "q4": "http://localhost:4200/dashboard/questions",
+        "q5": "Identifying the hiring need",
+        "q6": "Training and integrating a new employee",
+        "q7": "http://localhost:4200/dashboard/questions",
+        "q8": "Health insurance",
+        "q9": "http://localhost:4200/dashboard/questions",
+        "q10": "To identify training needs and promote growth",
+        "q11": "Resignation",
+        "q12": "http://localhost:4200/dashboard/questions",
+        "q13": "Job description",
+        "q14": "http://localhost:4200/dashboard/questions",
+        "q15": "Compensation and benefits",
+        "q16": "Lack of communication",
+        "q17": "http://localhost:4200/dashboard/questions",
+        "q18": "Internal recruitment",
+        "q19": "http://localhost:4200/dashboard/questions",
+        "q20": "Asking open-ended questions"
+      },
+      "id": 3
+    }
+  ],
+  "departments": [
+    {
+      "id": "50938cba-7dc6-4660-80b9-465b37649af5",
+      "dName": "Sales",
+      "description": "sss"
+    },
+    {
+      "id": "5c731f3b-c2ab-4ff8-a80a-8531041d6f47",
+      "dName": "it",
+      "description": "it"
+    },
+    {
+      "id": "8ffe9a60-24ce-457e-9000-bd2a1c16d3cf",
+      "dName": "markting",
+      "description": "markting"
+    },
+    {
+      "id": "b85f2728-24b7-4f52-9d7f-094e74bbc6f9",
+      "dName": "sss",
+      "description": "ss"
+    },
+    {
+      "id": "016b0008-a7e4-47bf-bd0c-890b41c28335",
+      "dName": "ss",
+      "description": "ss"
+    },
+    {
+      "id": "9030e85c-5ebe-4045-9496-3e8f37105153",
+      "dName": "aaaaaaaaa",
+      "description": "aa"
     }
   ]
 }

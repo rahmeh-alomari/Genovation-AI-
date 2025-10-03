@@ -1,0 +1,90 @@
+<div class="card p-6 max-w-3xl mx-auto shadow-2xl rounded-2xl ">
+  <h2 class="text-3xl font-bold mb-8 text-center">➕ Add New Question</h2>
+
+  <form class="space-y-8">
+
+    <!-- Department -->
+    <fieldset>
+      <label class="block text-lg font-medium mb-2">Department</label>
+      <input pInputText [(ngModel)]="newQuestion.department" name="department" class="w-full" />
+    </fieldset>
+
+    <fieldset>
+      <label class="block text-lg font-medium mb-2">Question Type</label>
+      <p-dropdown class="w-full" [options]="[
+          { label: 'Essay', value: 'essay' },
+          { label: 'Multiple Choice', value: 'multiple-choice' }
+        ]" [(ngModel)]="questionType" name="questionType" (onChange)="resetForm()"
+        placeholder="Select Type"></p-dropdown>
+    </fieldset>
+
+    <fieldset *ngIf="questionType === 'essay' || questionType === 'multiple-choice'">
+      <label class="block text-lg font-medium mb-2">Question Text</label>
+      <textarea rows="4" pInputTextarea [(ngModel)]="newQuestion.question" name="question" class="w-full"></textarea>
+    </fieldset>
+
+    <fieldset *ngIf="questionType === 'essay'">
+      <label class="block text-lg font-medium mb-2">Max Length</label>
+      <input type="number" pInputText [(ngModel)]="newQuestion.maxLength" name="maxLength" class="w-full" />
+    </fieldset>
+
+    <fieldset *ngIf="questionType === 'multiple-choice'" class="space-y-6">
+      <div>
+        <label class="block text-lg font-medium mb-2">Options</label>
+        <div *ngFor="let option of newQuestion.options; let i = index" class="flex gap-3 items-center mb-3">
+          <input pInputText [(ngModel)]="newQuestion.options[i]" name="option{{i}}" class="flex-grow" />
+          <button pButton icon="pi pi-times" class="p-button-rounded p-button-danger" (click)="removeOption(i)"
+            type="button"></button>
+        </div>
+        <button pButton label="Add Option" icon="pi pi-plus" class="p-button-text" (click)="addOption()"
+          type="button"></button>
+      </div>
+
+      <div>
+        <label class="block text-lg font-medium mt-6 mb-3">Correct Answer(s)</label>
+
+        <div *ngIf="newQuestion.multipleSelection; else singleSelect" class="flex flex-wrap gap-4 mb-4">
+          <div *ngFor="let option of newQuestion.options" class="flex items-center gap-2">
+            <p-checkbox name="correctAnswers" [value]="option" [(ngModel)]="newQuestion.correctAnswers"
+              inputId="opt-{{ option }}"></p-checkbox>
+            <label [for]="'opt-' + option">{{ option }}</label>
+          </div>
+        </div>
+
+        <ng-template #singleSelect>
+          <div class="flex flex-wrap gap-4 mb-4">
+            <div *ngFor="let option of newQuestion.options" class="flex items-center gap-2">
+              <p-radioButton name="correctAnswerSingle" [value]="option" [(ngModel)]="correctAnswerSingle"
+                inputId="opt-single-{{ option }}"></p-radioButton>
+              <label [for]="'opt-single-' + option">{{ option }}</label>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <p-checkbox inputId="multiSelect" [(ngModel)]="newQuestion.multipleSelection" name="multipleSelection"
+          binary="true"></p-checkbox>
+        <label for="multiSelect">Allow multiple selection</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div class="flex items-center gap-2">
+        <p-checkbox inputId="isRequired" [(ngModel)]="newQuestion.required" name="required" binary="true"></p-checkbox>
+        <label for="isRequired">Required</label>
+      </div>
+    </fieldset>
+
+    <div class="text-center mt-6">
+      <button pButton label="Save Question" class="p-button p-button-success px-6 py-3" (click)="submit()"
+        type="button"></button>
+    </div>
+  </form>
+
+  <div class="mt-5">
+    <app-smart-table-component [columns]="columns" [data]="questions()"></app-smart-table-component>
+  </div>
+
+
+</div>

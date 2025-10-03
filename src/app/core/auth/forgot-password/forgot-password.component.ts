@@ -73,7 +73,6 @@ export class ForgotPasswordComponent {
           detail: 'Password reset successfully!',
           life: 3000,
         });
-        // Wait 3 seconds, then reset step and form & close dialog
         setTimeout(() => {
           this.step = 'email';
           this.forgotPasswordForm.reset();

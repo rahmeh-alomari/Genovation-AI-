@@ -5,6 +5,33 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
+:root {
+  --bg-color: #111111;        
+  --text-color: #ffffff;       
+  --button-bg: #10b981;       
+  --button-text: #ffffff;      
+  --icon-color: #d1d5db;      
+  --icon-hover-color: #22c55e
+}
+
+body.dark-mode {
+  --icon-color: #f3f4f6;        
+  --icon-hover-color: #10b981;
+}
+
+.themable-icon {
+  color: var(--icon-color);
+  transition: color 0.2s ease-in-out;
+}
+.p-error {
+  font-size: 0.75rem;
+  color: red;
+}
+.themable-icon:hover {
+  color: var(--icon-hover-color);
+  cursor: pointer;
+}
 html, body {
   margin: 0;
   height: 100%;
@@ -15,7 +42,23 @@ html, body {
   color: #f9fafb !important;
   border: 1px solid  #2c3e50 !important;
 }
+.form-control {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #374151;
+  color: white;
+}
 
+.form-control::placeholder {
+  color: #9ca3af;
+}
+.flex-row-gap-10 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
 .p-card .p-card-header {
   color: #f9fafb !important;
 }
@@ -30,7 +73,7 @@ html, body {
 }
 
 .p-dialog .p-dialog-header {
-  color: white;
+  /* color: white; */
   font-weight: 700;
   font-size: 1.25rem;
   padding: 1rem 1.5rem;

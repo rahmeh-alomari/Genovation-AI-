@@ -1,4 +1,4 @@
-import { ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, isDevMode } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -11,29 +11,28 @@ import { MessageService } from 'primeng/api';
 import { environment } from 'environments/environment';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideServiceWorker } from '@angular/service-worker';
 export const appConfig: ApplicationConfig = {
- providers: [
-  provideRouter(routes),
-  provideClientHydration(withEventReplay()),
-  provideAnimationsAsync(),
-  provideRouter(routes),
+  providers: [
+    provideRouter(routes),
+    provideClientHydration(withEventReplay()),
+    provideAnimationsAsync(),
+    provideRouter(routes),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-  provideHttpClient(withInterceptors([authInterceptor])),
-  {
-    provide: MessageService,
-    useClass: MessageService,
-  },
-  providePrimeNG({
-    theme: {
-      preset: Aura,
-    },
-  }),
+    provideHttpClient(withInterceptors([authInterceptor])),
     {
-      provide: HTTP_INTERCEPTORS,
-      useValue: authInterceptor,
-      multi: true,
-    }
-],
+      provide: MessageService,
+      useClass: MessageService,
+    },
+    providePrimeNG({
+      theme: {
+        preset: Aura,
+      },
+    }), provideServiceWorker('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000'
+    })
+  ],
 
 };

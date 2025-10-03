@@ -1,10 +1,10 @@
 .login-wrapper {
-  height: 100vh;
-  max-height: 100vh;
+  height: 100vh; 
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-color: #111827;
+  justify-content: center;
+  background-color: #111827; 
+  overflow: hidden;
 }
 
 .login-box {
@@ -13,9 +13,12 @@
   padding: 2.5rem;
   border-radius: 1rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  width: 400px;
+  width: 500px;
   max-width: 90%;
+
+  overflow: hidden; 
 }
+
 
 .login-title {
   font-size: 1.75rem;
@@ -34,7 +37,10 @@
 .login-form .form-group {
   margin-bottom: 1rem;
 }
+.login-form  {
+      margin-bottom:25px;
 
+}
 .login-form label {
   display: block;
   margin-bottom: 0.3rem;
@@ -42,18 +48,7 @@
   color: #d1d5db;
 }
 
-.form-control {
-  width: 100%;
-  padding: 0.6rem;
-  border-radius: 0.5rem;
-  border: none;
-  background-color: #374151;
-  color: white;
-}
 
-.form-control::placeholder {
-  color: #9ca3af;
-}
 
 .error-msg {
   font-size: 0.75rem;

@@ -15,4 +15,5 @@ export class App {
 
 
   firebaseApp = initializeApp(environment.firebase);
+
 }

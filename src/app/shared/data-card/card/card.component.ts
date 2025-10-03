@@ -29,6 +29,8 @@ export class CardComponent {
 
   ngAfterViewInit(): void {
     if (this.chartData && this.chartRef) {
+            console.log("chartData",this.chartData)
+
       this.createChart();
     }
   }

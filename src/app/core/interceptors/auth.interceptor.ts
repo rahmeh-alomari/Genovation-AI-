@@ -2,12 +2,16 @@ import { HttpInterceptorFn, HttpRequest, HttpHandlerFn, HttpEvent, HttpResponse,
 import { Observable, tap } from 'rxjs';
 import { inject } from '@angular/core';
 import { MessageService } from 'primeng/api';
-
 export const authInterceptor: HttpInterceptorFn = (req: HttpRequest<any>, next: HttpHandlerFn): Observable<HttpEvent<any>> => {
   const messageService = inject(MessageService);
 
-  const token = localStorage.getItem('auth_token');
-  const authReq = token
+  const token = localStorage.getItem('auth-token');
+
+  const skipTokenFor = ['/reset-password'];
+
+  const skipToken = skipTokenFor.some(url => req.url.includes(url));
+
+  const authReq = (!skipToken && token)
     ? req.clone({
         headers: req.headers.set('Authorization', `Bearer ${token}`),
       })
@@ -16,7 +20,6 @@ export const authInterceptor: HttpInterceptorFn = (req: HttpRequest<any>, next: 
   return next(authReq).pipe(
     tap({
       next: (event) => {
-
         if (event instanceof HttpResponse) {
           if (req.method !== 'GET') {
             const toastMessage = event.body?.message || 'Request completed successfully';

@@ -7,13 +7,19 @@
     <li class="logo">
       <img src="assets/favicon.ico.png" alt="App Logo" />
     </li>
-
     <li>
       <a routerLink="/dashboard/users" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
         <i class="pi pi-user icon"></i>
         <span class="text" *ngIf="!isCollapsed">Users</span>
       </a>
     </li>
+    <!-- <li>
+      <a routerLink="/dashboard/questions" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="pi pi-question-circle icon"></i>
+        <span class="text" *ngIf="!isCollapsed">Questions</span>
+      </a>
+    </li> -->
+
 
     <li>
       <a routerLink="/dashboard/vehicles" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
@@ -21,6 +27,19 @@
         <span class="text" *ngIf="!isCollapsed">Vehicles</span>
       </a>
     </li>
+  <!-- <li>
+      <a routerLink="/dashboard/add-questions" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="pi pi-file-edit icon"></i>
+        <span class="text" *ngIf="!isCollapsed">ADD Questions</span>
+      </a>
+    </li>
+
+      <li>
+      <a routerLink="/dashboard/add-department" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <i class="pi pi-building	 icon"></i>
+        <span class="text" *ngIf="!isCollapsed">Department</span>
+      </a>
+    </li> -->
   </ul>
 
   <div class="user-info" [class.collapsed]="isCollapsed">
@@ -28,10 +47,10 @@
     <span class="text" *ngIf="!isCollapsed">Rahmeh Akram</span>
   </div>
   <div class="logout-section" [class.collapsed]="isCollapsed">
-  <button (click)="logout()" class="logout-btn">
-    <i class="pi pi-power-off icon"></i>
-    <span class="text" *ngIf="!isCollapsed">Logout</span>
-  </button>
-</div>
+    <button (click)="logout()" class="logout-btn">
+      <i class="pi pi-power-off icon"></i>
+      <span class="text" *ngIf="!isCollapsed">Logout</span>
+    </button>
+  </div>
 
 </nav>

@@ -23,19 +23,19 @@
     <div class="form-row">
       <div class="form-field">
         <label for="firstName">First Name *</label>
-        <input id="firstName" pInputText formControlName="firstName" />
+        <input  class="form-control" id="firstName" pInputText formControlName="firstName" />
         <small class="p-error" *ngIf="isInvalid('firstName')">Required</small>
       </div>
 
       <div class="form-field">
         <label for="middleName">Middle Name *</label>
-        <input id="middleName" pInputText formControlName="middleName" />
+        <input  class="form-control" id="middleName" pInputText formControlName="middleName" />
         <small class="p-error" *ngIf="isInvalid('middleName')">Required</small>
       </div>
 
       <div class="form-field">
         <label for="lastName">Last Name *</label>
-        <input id="lastName" pInputText formControlName="lastName" />
+        <input  class="form-control" id="lastName" pInputText formControlName="lastName" />
         <small class="p-error" *ngIf="isInvalid('lastName')">Required</small>
       </div>
     </div>
@@ -55,7 +55,7 @@
 
     <div class="of-field" *ngFor="let f of ['department','fleet','rfi','dPhone','email']">
       <label [for]="f">{{ labelMap[f] }} *</label>
-      <input pInputText [id]="f" [formControlName]="f" />
+      <input  class="form-control" pInputText [id]="f" [formControlName]="f" />
       <small class="p-error" *ngIf="isInvalid(f)">
         {{ labelMap[f] }} is required
         <span *ngIf="f==='dPhone'"> (10 digits)</span>

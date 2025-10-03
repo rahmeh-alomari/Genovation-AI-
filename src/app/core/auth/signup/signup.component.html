@@ -1,10 +1,11 @@
 <div class="login-wrapper">
     <div class="login-box">
-        <app-social-sign-up></app-social-sign-up>
+       
         <h2 class="login-title">Sign Up</h2>
         <p class="login-subtitle">Create a new account</p>
         <form [formGroup]="signupForm" (ngSubmit)="onSignup()" class="login-form">
-            <div class="form-group">
+            <div class="flex-row-gap-10 ">
+    <div class="form-group ">
                 <label>First Name</label>
                 <input pInputText type="text" class="form-control" formControlName="firstName"
                     placeholder="First Name" />
@@ -21,6 +22,8 @@
                     Last name is required
                 </span>
             </div>
+            </div>
+        
             <div class="form-group">
                 <label>Role</label>
                 <p-select formControlName="role" [options]="roles" optionLabel="label" optionValue="value"
@@ -47,7 +50,7 @@
                     <button type="button" (click)="showPassword = !showPassword" class="toggle-password-btn"
                         style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;"
                         aria-label="Toggle password visibility">
-                        <i [class]="showPassword ? 'pi pi-eye' : 'pi pi-eye-slash'"></i>
+                        <i [class]="showPassword ? 'pi pi-eye themable-icon' : 'pi pi-eye-slash themable-icon'"></i>
                     </button>
 
                 </div>
@@ -70,5 +73,6 @@
                 Already have an account? <a routerLink="/login">Login</a>
             </div>
         </form>
+         <app-social-sign-up></app-social-sign-up>
     </div>
 </div>

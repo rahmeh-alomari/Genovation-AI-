@@ -4,11 +4,18 @@
       <canvas #chartCanvas></canvas>
     </div>
 
-    <ng-template #plainCard>
-      <div class="text-card">
-        <h4>{{ title }}</h4>
-        <p>{{ value }}</p>
-      </div>
-    </ng-template>
+ <ng-template #plainCard>
+  <div class="stat-card">
+    <div class="icon-circle">
+      <i class="pi pi-chart-bar"></i> 
+    </div>
+    <div class="stat-info">
+      <h4 class="stat-title">{{ title }}</h4>
+      <p class="stat-value">{{ value }}</p>
+    </div>
+  </div>
+</ng-template>
+
+
   </p-card>
 </div>

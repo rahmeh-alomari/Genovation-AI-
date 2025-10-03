@@ -14,8 +14,6 @@ bash  api
 npm run start:api
 
 
-## Table of Contents
-
 - [Features](#features)  
 - [Prerequisites](#prerequisites)  
 - [Setup](#setup)  
@@ -29,8 +27,6 @@ npm run start:api
 
 ---
 
-## Features
-
 - Responsive sidebar with PrimeIcons  
 - User and Vehicle CRUD operations  
 - Data fetched from a mock REST API (`json-server`)  
@@ -40,7 +36,6 @@ npm run start:api
 
 ---
 
-## Prerequisites
 - json-server --watch db.json --port 3001
 - [Node.js](https://nodejs.org/) (version 20.x recommended)  
 - [npm](https://www.npmjs.com/) (comes with Node.js)  
