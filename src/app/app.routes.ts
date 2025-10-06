@@ -59,31 +59,9 @@ export const routes: Routes = [
           metaDescription: 'View and manage vehicles in the system.'
         }
       },
-      {
-        path: 'questions',
-        loadComponent: () => import('./features/dashboard/components/question-form/question-form.component').then(m => m.QuestionFormComponent),
-        data: {
-          metaTitle: 'Question Bank | Admin Panel',
-          metaDescription: 'Browse and edit questions by department.'
-        }
-      },
-      {
-        path: 'add-questions',
-        loadComponent: () => import('./features/dashboard/components/add-questions/add-questions.component').then(m => m.AddQuestionsComponent),
-        data: {
-          metaTitle: 'Add Questions | Admin Panel',
-          metaDescription: 'Add new multiple choice or essay questions to the system.'
-        }
-      }
-      ,
-       {
-        path: 'add-department',
-        loadComponent: () => import('./features/dashboard/components/add-dpartment/add-dpartment.component').then(m => m.AddDpartmentComponent),
-        data: {
-          metaTitle: 'Add Department | Admin Panel',
-          metaDescription: 'Add new mDepartment.'
-        }
-      },
+     
+      
+       
       {
         path: '',
         redirectTo: 'users',
